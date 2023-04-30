@@ -1,0 +1,138 @@
+{
+    "info": {
+        "name": "MS",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "GetAll Products",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:4000/produit",
+                    "path": [
+                        "produit"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                }
+            }
+        },
+        {
+            "name": "ProductsByIds",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/produit/acheter",
+                    "path": [
+                        "produit",
+                        "acheter"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "Thunder Client (https://www.thunderclient.com)",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"ids\": [\n    \"644eda31002d4bc2c8efc4f8\",\n    \"644eda36002d4bc2c8efc4fa\"\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "AddProduct",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/produit",
+                    "path": [
+                        "produit"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nom\":\"IPhone 11\", \"description\":\"APPEL PRODUCT\", \"prix\":6000  \n}"
+                }
+            }
+        },
+        {
+            "name": "GetAllCommandes",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:4001/commandes",
+                    "path": [
+                        "commandes"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4001"
+                }
+            }
+        },
+        {
+            "name": "OrderNewCommande",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4001/commande/ajouter",
+                    "path": [
+                        "commande",
+                        "ajouter"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4001"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"ids\": [\n    \"644eda31002d4bc2c8efc4f8\",\n    \"644eda36002d4bc2c8efc4fa\"\n  ]\n}"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MS",
+    "dateExported": "2023-04-30T21:29:06.659Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e21118c5-29a2-42f9-bcb3-3882119365d2",
+            "colId": "15f8c738-2139-44a6-837a-a1932d25998e",
+            "containerId": "",
+            "name": "GetAll Products",
+            "url": "http://localhost:4000/produit",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-29T15:49:30.450Z",
+            "modified": "2023-04-30T21:17:47.187Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c3c72792-4ddd-44bd-858c-2f4a2cdbcd19",
+            "colId": "15f8c738-2139-44a6-837a-a1932d25998e",
+            "containerId": "",
+            "name": "ProductsByIds",
+            "url": "http://localhost:4000/produit/acheter",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-29T15:49:55.265Z",
+            "modified": "2023-04-30T21:16:41.259Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"ids\": [\n    \"644eda31002d4bc2c8efc4f8\",\n    \"644eda36002d4bc2c8efc4fa\"\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "55288f48-0b5c-45a4-8d15-c7b61afac148",
+            "colId": "15f8c738-2139-44a6-837a-a1932d25998e",
+            "containerId": "",
+            "name": "AddProduct",
+            "url": "http://localhost:4000/produit",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-04-30T21:21:42.724Z",
+            "modified": "2023-04-30T21:22:51.537Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nom\":\"IPhone 11\", \"description\":\"APPEL PRODUCT\", \"prix\":6000  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "59fe8072-7b5d-4c6b-a4e3-3727990ba39b",
+            "colId": "15f8c738-2139-44a6-837a-a1932d25998e",
+            "containerId": "",
+            "name": "GetAllCommandes",
+            "url": "http://localhost:4001/commandes",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-04-30T21:18:49.471Z",
+            "modified": "2023-04-30T21:19:40.731Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3cd47649-80c4-4049-8924-c4155ae30bfe",
+            "colId": "15f8c738-2139-44a6-837a-a1932d25998e",
+            "containerId": "",
+            "name": "OrderNewCommande",
+            "url": "http://localhost:4001/commande/ajouter",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-04-30T21:20:02.195Z",
+            "modified": "2023-04-30T21:21:06.956Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"ids\": [\n    \"644eda31002d4bc2c8efc4f8\",\n    \"644eda36002d4bc2c8efc4fa\"\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
