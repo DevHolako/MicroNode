@@ -1,4 +1,5 @@
-version: "3"
+version: "3.8"
+
 services:
   ms-commande:
     build: ./MS-Commande
@@ -9,6 +10,7 @@ services:
       - mongodb
     networks:
       - my-network
+
   ms-produit:
     build: ./MS-Produit
     container_name: ms-produit
@@ -18,13 +20,17 @@ services:
       - mongodb
     networks:
       - my-network
+
   mongodb:
-    image: mongo:latest
+    image: mongo:4.0-xenial
     container_name: mongodb
     ports:
       - "27017:27017"
     networks:
       - my-network
+    volumes:
+      - db-vol:/data/db
+
   mongo-express:
     image: mongo-express
     container_name: mongo-express
@@ -37,6 +43,9 @@ services:
       ME_CONFIG_MONGODB_PORT: 27017
     networks:
       - my-network
+
+volumes:
+  db-vol:
 
 networks:
   my-network:
