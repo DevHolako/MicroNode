@@ -22,7 +22,7 @@ services:
       - my-network
 
   mongodb:
-    image: mongo:4.0-xenial
+    image: mvertes/alpine-mongo:latest
     container_name: mongodb
     ports:
       - "27017:27017"
