@@ -25,7 +25,7 @@ services:
     image: mvertes/alpine-mongo:latest
     container_name: mongodb
     ports:
-      - "27017:27017"
+      - "27012:27017"
     networks:
       - my-network
     volumes:
