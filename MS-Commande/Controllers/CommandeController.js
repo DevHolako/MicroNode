@@ -1,6 +1,6 @@
 const Commande = require("../Models/Commande");
 const { httpRequest } = require("../Helpers/index");
-const GetCommandes = async (req, res) => {
+const GetCommandes = async (_req, res) => {
   try {
     const Commandes = await Commande.find();
     res.status(200).json({
@@ -17,10 +17,11 @@ const GetCommandes = async (req, res) => {
   }
 };
 
-const AddCommande = async (req, res, next) => {
+const AddCommande = async (req, res) => {
   // Création d'une nouvelle commande dans la collection commande
   const { ids, email_utilisateur } = req.body;
-  httpRequest(req.body.ids).then((total) => {
+
+  await httpRequest(ids).then((total) => {
     const newCommande = new Commande({
       produits: ids,
       email_utilisateur: email_utilisateur,
@@ -28,7 +29,13 @@ const AddCommande = async (req, res, next) => {
     });
     newCommande
       .save()
-      .then((commande) => res.status(201).json(commande))
+      .then((commande) =>
+        res.status(201).json({
+          success: true,
+          countProduct: ids.length,
+          commande,
+        })
+      )
       .catch((error) => res.status(400).json({ error }));
   });
 };
